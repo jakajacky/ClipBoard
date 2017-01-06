@@ -12,6 +12,8 @@
 		F21D0ED31E165D1C0072086C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F21D0ED21E165D1C0072086C /* ViewController.m */; };
 		F21D0ED51E165D1C0072086C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21D0ED41E165D1C0072086C /* Assets.xcassets */; };
 		F21D0ED81E165D1C0072086C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21D0ED61E165D1C0072086C /* Main.storyboard */; };
+		F21D0EE11E1B7D5E0072086C /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F21D0EE01E1B7D5E0072086C /* MainWindowController.m */; };
+		F2D3B6FF1E1E17E200887945 /* ClipDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D3B6FE1E1E17E200887945 /* ClipDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		F21D0ED41E165D1C0072086C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F21D0ED71E165D1C0072086C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F21D0ED91E165D1C0072086C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F21D0EDF1E1B7D5E0072086C /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		F21D0EE01E1B7D5E0072086C /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		F2D3B6FD1E1E17E200887945 /* ClipDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClipDataModel.h; sourceTree = "<group>"; };
+		F2D3B6FE1E1E17E200887945 /* ClipDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClipDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +64,12 @@
 			children = (
 				F21D0ECB1E165D1C0072086C /* AppDelegate.h */,
 				F21D0ECC1E165D1C0072086C /* AppDelegate.m */,
+				F21D0EDF1E1B7D5E0072086C /* MainWindowController.h */,
+				F21D0EE01E1B7D5E0072086C /* MainWindowController.m */,
 				F21D0ED11E165D1C0072086C /* ViewController.h */,
 				F21D0ED21E165D1C0072086C /* ViewController.m */,
+				F2D3B6FD1E1E17E200887945 /* ClipDataModel.h */,
+				F2D3B6FE1E1E17E200887945 /* ClipDataModel.m */,
 				F21D0ED41E165D1C0072086C /* Assets.xcassets */,
 				F21D0ED61E165D1C0072086C /* Main.storyboard */,
 				F21D0ED91E165D1C0072086C /* Info.plist */,
@@ -146,7 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F21D0EE11E1B7D5E0072086C /* MainWindowController.m in Sources */,
 				F21D0ED31E165D1C0072086C /* ViewController.m in Sources */,
+				F2D3B6FF1E1E17E200887945 /* ClipDataModel.m in Sources */,
 				F21D0ED01E165D1C0072086C /* main.m in Sources */,
 				F21D0ECD1E165D1C0072086C /* AppDelegate.m in Sources */,
 			);
@@ -296,6 +308,7 @@
 				F21D0EDE1E165D1C0072086C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
