@@ -13,7 +13,10 @@
 		F21D0ED51E165D1C0072086C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21D0ED41E165D1C0072086C /* Assets.xcassets */; };
 		F21D0ED81E165D1C0072086C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21D0ED61E165D1C0072086C /* Main.storyboard */; };
 		F21D0EE11E1B7D5E0072086C /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F21D0EE01E1B7D5E0072086C /* MainWindowController.m */; };
-		F2D3B6FF1E1E17E200887945 /* ClipDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D3B6FE1E1E17E200887945 /* ClipDataModel.m */; };
+		F2FC93631E1FA279002C222D /* ClipDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2FC93611E1FA279002C222D /* ClipDataModel.xcdatamodeld */; };
+		F2FC93671E1FA3F1002C222D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2FC93661E1FA3F1002C222D /* CoreData.framework */; };
+		F2FC93721E1FA67E002C222D /* ClipDataModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FC936F1E1FA67E002C222D /* ClipDataModel+CoreDataClass.m */; };
+		F2FC93731E1FA67E002C222D /* ClipDataModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FC93711E1FA67E002C222D /* ClipDataModel+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +31,13 @@
 		F21D0ED91E165D1C0072086C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F21D0EDF1E1B7D5E0072086C /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		F21D0EE01E1B7D5E0072086C /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
-		F2D3B6FD1E1E17E200887945 /* ClipDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClipDataModel.h; sourceTree = "<group>"; };
-		F2D3B6FE1E1E17E200887945 /* ClipDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClipDataModel.m; sourceTree = "<group>"; };
+		F2FC93621E1FA279002C222D /* ClipDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClipDataModel.xcdatamodel; sourceTree = "<group>"; };
+		F2FC93641E1FA2E9002C222D /* ClipBoard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClipBoard.entitlements; sourceTree = "<group>"; };
+		F2FC93661E1FA3F1002C222D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F2FC936E1E1FA67E002C222D /* ClipDataModel+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ClipDataModel+CoreDataClass.h"; sourceTree = "<group>"; };
+		F2FC936F1E1FA67E002C222D /* ClipDataModel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ClipDataModel+CoreDataClass.m"; sourceTree = "<group>"; };
+		F2FC93701E1FA67E002C222D /* ClipDataModel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ClipDataModel+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F2FC93711E1FA67E002C222D /* ClipDataModel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ClipDataModel+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2FC93671E1FA3F1002C222D /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,8 +55,14 @@
 		F21D0EBF1E165D1C0072086C = {
 			isa = PBXGroup;
 			children = (
+				F2FC936E1E1FA67E002C222D /* ClipDataModel+CoreDataClass.h */,
+				F2FC936F1E1FA67E002C222D /* ClipDataModel+CoreDataClass.m */,
+				F2FC93701E1FA67E002C222D /* ClipDataModel+CoreDataProperties.h */,
+				F2FC93711E1FA67E002C222D /* ClipDataModel+CoreDataProperties.m */,
+				F2FC93611E1FA279002C222D /* ClipDataModel.xcdatamodeld */,
 				F21D0ECA1E165D1C0072086C /* ClipBoard */,
 				F21D0EC91E165D1C0072086C /* Products */,
+				F2FC93651E1FA3F1002C222D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,14 +77,13 @@
 		F21D0ECA1E165D1C0072086C /* ClipBoard */ = {
 			isa = PBXGroup;
 			children = (
+				F2FC93641E1FA2E9002C222D /* ClipBoard.entitlements */,
 				F21D0ECB1E165D1C0072086C /* AppDelegate.h */,
 				F21D0ECC1E165D1C0072086C /* AppDelegate.m */,
 				F21D0EDF1E1B7D5E0072086C /* MainWindowController.h */,
 				F21D0EE01E1B7D5E0072086C /* MainWindowController.m */,
 				F21D0ED11E165D1C0072086C /* ViewController.h */,
 				F21D0ED21E165D1C0072086C /* ViewController.m */,
-				F2D3B6FD1E1E17E200887945 /* ClipDataModel.h */,
-				F2D3B6FE1E1E17E200887945 /* ClipDataModel.m */,
 				F21D0ED41E165D1C0072086C /* Assets.xcassets */,
 				F21D0ED61E165D1C0072086C /* Main.storyboard */,
 				F21D0ED91E165D1C0072086C /* Info.plist */,
@@ -84,6 +98,14 @@
 				F21D0ECF1E165D1C0072086C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F2FC93651E1FA3F1002C222D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2FC93661E1FA3F1002C222D /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,7 +139,16 @@
 				TargetAttributes = {
 					F21D0EC71E165D1C0072086C = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 22X7C4G62Z;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -156,11 +187,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2FC93731E1FA67E002C222D /* ClipDataModel+CoreDataProperties.m in Sources */,
 				F21D0EE11E1B7D5E0072086C /* MainWindowController.m in Sources */,
 				F21D0ED31E165D1C0072086C /* ViewController.m in Sources */,
-				F2D3B6FF1E1E17E200887945 /* ClipDataModel.m in Sources */,
 				F21D0ED01E165D1C0072086C /* main.m in Sources */,
 				F21D0ECD1E165D1C0072086C /* AppDelegate.m in Sources */,
+				F2FC93631E1FA279002C222D /* ClipDataModel.xcdatamodeld in Sources */,
+				F2FC93721E1FA67E002C222D /* ClipDataModel+CoreDataClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,10 +302,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClipBoard/ClipBoard.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 22X7C4G62Z;
 				INFOPLIST_FILE = ClipBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.ClipBoard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.ClipBoard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -281,10 +317,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClipBoard/ClipBoard.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 22X7C4G62Z;
 				INFOPLIST_FILE = ClipBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.ClipBoard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.ClipBoard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -311,6 +350,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F2FC93611E1FA279002C222D /* ClipDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F2FC93621E1FA279002C222D /* ClipDataModel.xcdatamodel */,
+			);
+			currentVersion = F2FC93621E1FA279002C222D /* ClipDataModel.xcdatamodel */;
+			path = ClipDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F21D0EC01E165D1C0072086C /* Project object */;
 }
