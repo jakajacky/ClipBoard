@@ -13,6 +13,9 @@
 		F21D0ED51E165D1C0072086C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21D0ED41E165D1C0072086C /* Assets.xcassets */; };
 		F21D0ED81E165D1C0072086C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21D0ED61E165D1C0072086C /* Main.storyboard */; };
 		F21D0EE11E1B7D5E0072086C /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F21D0EE01E1B7D5E0072086C /* MainWindowController.m */; };
+		F2A7DECD1E49760B00584CF6 /* CustomCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2A7DECC1E49760B00584CF6 /* CustomCellView.xib */; };
+		F2A7DED41E49784300584CF6 /* CustomCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A7DED31E49784300584CF6 /* CustomCellView.m */; };
+		F2A7DEDB1E49A94B00584CF6 /* delet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A7DEDA1E49A94B00584CF6 /* delet@2x.png */; };
 		F2FC93631E1FA279002C222D /* ClipDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2FC93611E1FA279002C222D /* ClipDataModel.xcdatamodeld */; };
 		F2FC93671E1FA3F1002C222D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2FC93661E1FA3F1002C222D /* CoreData.framework */; };
 		F2FC93721E1FA67E002C222D /* ClipDataModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FC936F1E1FA67E002C222D /* ClipDataModel+CoreDataClass.m */; };
@@ -31,6 +34,10 @@
 		F21D0ED91E165D1C0072086C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F21D0EDF1E1B7D5E0072086C /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		F21D0EE01E1B7D5E0072086C /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		F2A7DECC1E49760B00584CF6 /* CustomCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCellView.xib; sourceTree = "<group>"; };
+		F2A7DED21E49784300584CF6 /* CustomCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellView.h; sourceTree = "<group>"; };
+		F2A7DED31E49784300584CF6 /* CustomCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellView.m; sourceTree = "<group>"; };
+		F2A7DEDA1E49A94B00584CF6 /* delet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delet@2x.png"; sourceTree = "<group>"; };
 		F2FC93621E1FA279002C222D /* ClipDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClipDataModel.xcdatamodel; sourceTree = "<group>"; };
 		F2FC93641E1FA2E9002C222D /* ClipBoard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClipBoard.entitlements; sourceTree = "<group>"; };
 		F2FC93661E1FA3F1002C222D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -84,6 +91,9 @@
 				F21D0EE01E1B7D5E0072086C /* MainWindowController.m */,
 				F21D0ED11E165D1C0072086C /* ViewController.h */,
 				F21D0ED21E165D1C0072086C /* ViewController.m */,
+				F2A7DED21E49784300584CF6 /* CustomCellView.h */,
+				F2A7DED31E49784300584CF6 /* CustomCellView.m */,
+				F2A7DECC1E49760B00584CF6 /* CustomCellView.xib */,
 				F21D0ED41E165D1C0072086C /* Assets.xcassets */,
 				F21D0ED61E165D1C0072086C /* Main.storyboard */,
 				F21D0ED91E165D1C0072086C /* Info.plist */,
@@ -95,6 +105,7 @@
 		F21D0ECE1E165D1C0072086C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F2A7DEDA1E49A94B00584CF6 /* delet@2x.png */,
 				F21D0ECF1E165D1C0072086C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -175,8 +186,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2A7DEDB1E49A94B00584CF6 /* delet@2x.png in Resources */,
 				F21D0ED51E165D1C0072086C /* Assets.xcassets in Resources */,
 				F21D0ED81E165D1C0072086C /* Main.storyboard in Resources */,
+				F2A7DECD1E49760B00584CF6 /* CustomCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2FC93731E1FA67E002C222D /* ClipDataModel+CoreDataProperties.m in Sources */,
+				F2A7DED41E49784300584CF6 /* CustomCellView.m in Sources */,
 				F21D0EE11E1B7D5E0072086C /* MainWindowController.m in Sources */,
 				F21D0ED31E165D1C0072086C /* ViewController.m in Sources */,
 				F21D0ED01E165D1C0072086C /* main.m in Sources */,
