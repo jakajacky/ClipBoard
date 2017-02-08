@@ -16,6 +16,7 @@
 		F2A7DECD1E49760B00584CF6 /* CustomCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2A7DECC1E49760B00584CF6 /* CustomCellView.xib */; };
 		F2A7DED41E49784300584CF6 /* CustomCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A7DED31E49784300584CF6 /* CustomCellView.m */; };
 		F2A7DEDB1E49A94B00584CF6 /* delet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A7DEDA1E49A94B00584CF6 /* delet@2x.png */; };
+		F2A7DEDD1E4AEECE00584CF6 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A7DEDC1E4AEECE00584CF6 /* Icon@2x.png */; };
 		F2FC93631E1FA279002C222D /* ClipDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2FC93611E1FA279002C222D /* ClipDataModel.xcdatamodeld */; };
 		F2FC93671E1FA3F1002C222D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2FC93661E1FA3F1002C222D /* CoreData.framework */; };
 		F2FC93721E1FA67E002C222D /* ClipDataModel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FC936F1E1FA67E002C222D /* ClipDataModel+CoreDataClass.m */; };
@@ -38,6 +39,7 @@
 		F2A7DED21E49784300584CF6 /* CustomCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellView.h; sourceTree = "<group>"; };
 		F2A7DED31E49784300584CF6 /* CustomCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellView.m; sourceTree = "<group>"; };
 		F2A7DEDA1E49A94B00584CF6 /* delet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delet@2x.png"; sourceTree = "<group>"; };
+		F2A7DEDC1E4AEECE00584CF6 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		F2FC93621E1FA279002C222D /* ClipDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClipDataModel.xcdatamodel; sourceTree = "<group>"; };
 		F2FC93641E1FA2E9002C222D /* ClipBoard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClipBoard.entitlements; sourceTree = "<group>"; };
 		F2FC93661E1FA3F1002C222D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				F2A7DEDA1E49A94B00584CF6 /* delet@2x.png */,
+				F2A7DEDC1E4AEECE00584CF6 /* Icon@2x.png */,
 				F21D0ECF1E165D1C0072086C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -190,6 +193,7 @@
 				F21D0ED51E165D1C0072086C /* Assets.xcassets in Resources */,
 				F21D0ED81E165D1C0072086C /* Main.storyboard in Resources */,
 				F2A7DECD1E49760B00584CF6 /* CustomCellView.xib in Resources */,
+				F2A7DEDD1E4AEECE00584CF6 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
