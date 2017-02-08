@@ -47,12 +47,12 @@
   return YES;
 }
 
-//- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
-//  return YES;
-//}
-
 - (IBAction)itemAction:(id)sender {
-  NSLog(@"itemAction");
+  // 主窗口显示
+  [NSApp activateIgnoringOtherApps:NO];
+  for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
+    [window makeKeyAndOrderFront:self];
+  }
   //激活应用到前台(如果应用窗口处于非活动状态)
   [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
 }
