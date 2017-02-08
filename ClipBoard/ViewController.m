@@ -269,21 +269,33 @@
   [self.clipList removeObjectAtIndex:sender.tag];
   [self.clipListView reloadData];
   
-  /*
-   * 下面是剪切板有新数据，显示到列表的处理逻辑
-   */
-  // 有新数据插入，默认选中第一行
-  NSTableRowView *ro = [self.clipListView rowViewAtRow:0 makeIfNecessary:YES];
-  ro.selected = YES;
-  
-  // 显示选中row的操作栏
-  CustomCellView *newRowCell = (CustomCellView *)[self.clipListView viewAtColumn:2 row:0 makeIfNecessary:YES];
-  newRowCell.deleteButton.hidden = NO;
-  
-  // 取消旧的选中row
-  for (int i = 1 ; i < self.clipList.count; i++) {
-    CustomCellView *newRowCell = (CustomCellView *)[self.clipListView viewAtColumn:2 row:i makeIfNecessary:YES];
-    newRowCell.deleteButton.hidden = YES;
+  if (self.clipList.count > 0) {
+    // 获取数据
+    ClipDataModel *model0 = self.clipList[0];
+    
+    // 获取剪切板
+    NSPasteboard *board = [NSPasteboard generalPasteboard];
+    
+    // 更新剪切板
+    [board clearContents];
+    [board setString:model0.content forType:NSPasteboardTypeString];
+    
+    /*
+     * 下面是剪切板删除数据，显示到列表的处理逻辑
+     */
+    // 有数据删除，默认选中第一行
+    NSTableRowView *ro = [self.clipListView rowViewAtRow:0 makeIfNecessary:YES];
+    ro.selected = YES;
+    
+    // 显示选中row的操作栏
+    CustomCellView *newRowCell = (CustomCellView *)[self.clipListView viewAtColumn:2 row:0 makeIfNecessary:YES];
+    newRowCell.deleteButton.hidden = NO;
+    
+    // 取消旧的选中row
+    for (int i = 1 ; i < self.clipList.count; i++) {
+      CustomCellView *newRowCell = (CustomCellView *)[self.clipListView viewAtColumn:2 row:i makeIfNecessary:YES];
+      newRowCell.deleteButton.hidden = YES;
+    }
   }
 }
 
