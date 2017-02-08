@@ -41,6 +41,9 @@
   NSString *docs = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
   NSURL *url = [NSURL fileURLWithPath:[docs stringByAppendingPathComponent:@"clipData.data"]];
   
+  /*
+   * 在未加清空本地缓存数据功能之前，暂时这样，为了不让测试数据过多
+   */
   [[NSFileManager defaultManager] removeItemAtURL:url error:nil]; // 清空coredata数据库
   
   // 添加持久化存储库，这里使用SQLite作为存储库
