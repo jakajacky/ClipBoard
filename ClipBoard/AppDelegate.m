@@ -7,10 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "MainWindowController.h"
+#import "PreViewViewController.h"
 @interface AppDelegate ()
 @property (strong,nonatomic) NSStatusItem *item;
-@property (strong,nonatomic) IBOutlet MainWindowController *windowController;
+@property (strong) NSPopover *popover;
+@property(nonatomic)BOOL  isShow;
 @end
 
 
@@ -26,6 +27,8 @@
   item.button.image = [NSImage imageNamed:@"Icon"];
   
   self.item = item;
+  
+  [self setUpPopover];
 }
 
 
@@ -55,6 +58,23 @@
   }
   //激活应用到前台(如果应用窗口处于非活动状态)
   [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
+
+//  if (!self.isShow) {
+//    [self.popover showRelativeToRect:NSZeroRect ofView:[self item].button preferredEdge:NSRectEdgeMinY];
+//  } else {
+//    [self.popover close];
+//  }
+//  self.isShow = !self.isShow;
+  
+}
+
+-(void) setUpPopover {
+  self.popover = [[NSPopover alloc] init];
+  
+  PreViewViewController *v = [[PreViewViewController alloc] initWithNibName:@"PreViewViewController" bundle:[NSBundle mainBundle]];
+  
+  self.popover.contentViewController = v;
+  self.popover.behavior = NSPopoverBehaviorApplicationDefined;
 }
 
 @end

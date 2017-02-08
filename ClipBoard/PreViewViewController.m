@@ -1,17 +1,18 @@
 //
-//  ViewController.m
+//  PreViewViewController.m
 //  ClipBoard
 //
-//  Created by xqzh on 16/12/30.
-//  Copyright © 2016年 xqzh. All rights reserved.
+//  Created by xqzh on 17/2/8.
+//  Copyright © 2017年 xqzh. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PreViewViewController.h"
+
 #import "ClipDataModel+CoreDataClass.h"
 #import <CoreData/CoreData.h>
 #import "CustomCellView.h"
 #import "CoreDataContext.h"
-@interface ViewController () <NSTableViewDelegate, NSTableViewDataSource>
+@interface PreViewViewController () <NSTableViewDelegate, NSTableViewDataSource>
 
 @property (weak) IBOutlet NSTableView *clipListView;
 
@@ -23,7 +24,7 @@
 
 @end
 
-@implementation ViewController
+@implementation PreViewViewController
 
 - (void)awakeFromNib {
   [self.clipListView registerNib:[[NSNib alloc] initWithNibNamed:@"CustomCellView" bundle:nil] forIdentifier:@"customCell"];
@@ -33,30 +34,6 @@
   [super viewDidLoad];
   
   _clipList = [NSMutableArray array];
-//  // coreData 搭建环境
-//  // 从应用程序包中加载模型文件
-//  NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];
-//  // 传入模型对象，初始化NSPersistentStoreCoordinator
-//  NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
-//  // 构建SQLite数据库文件的路径
-//  NSString *docs = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-//  NSURL *url = [NSURL fileURLWithPath:[docs stringByAppendingPathComponent:@"clipData.data"]];
-//  
-//  /*
-//   * 在未加清空本地缓存数据功能之前，暂时这样，为了不让测试数据过多
-//   */
-//  [[NSFileManager defaultManager] removeItemAtURL:url error:nil]; // 清空coredata数据库
-//  
-//  // 添加持久化存储库，这里使用SQLite作为存储库
-//  NSError *error = nil;
-//  NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error];
-//  if (store == nil) { // 直接抛异常
-//    [NSException raise:@"添加数据库错误" format:@"%@", [error localizedDescription]];
-//  }
-//  // 初始化上下文，设置persistentStoreCoordinator属性
-//  _context = [[NSManagedObjectContext alloc] initWithConcurrencyType: NSMainQueueConcurrencyType];
-//  _context.persistentStoreCoordinator = psc;
-//  // 用完之后，记得要[context release];
   _context = [CoreDataContext DefaultContext].context;
   
   [self reloadData];
@@ -89,7 +66,7 @@
     NSLog(@"content=%@", obj.content);
     [_clipList addObject: obj];
   }
-
+  
 }
 
 - (void)run {
@@ -153,7 +130,7 @@
 
 - (void)setRepresentedObject:(id)representedObject {
   [super setRepresentedObject:representedObject];
-
+  
   // Update the view, if already loaded.
 }
 
