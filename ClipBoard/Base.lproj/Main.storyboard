@@ -666,7 +666,7 @@
                     <window key="window" title="ClipBoard" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="320" height="270"/>
+                        <rect key="contentRect" x="1065" y="607" width="375" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
                     </window>
                     <connections>
@@ -716,9 +716,8 @@
                                                             <rect key="frame" x="1" y="1" width="177" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dbm-v4-19U">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dbm-v4-19U">
+                                                                    <rect key="frame" x="-2" y="0.0" width="47" height="17"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="-------" id="YAh-Bh-p8J">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -726,6 +725,10 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="dbm-v4-19U" firstAttribute="leading" secondItem="Mzc-AJ-Sn5" secondAttribute="leading" id="ICP-Eg-6NJ"/>
+                                                                <constraint firstItem="dbm-v4-19U" firstAttribute="centerY" secondItem="Mzc-AJ-Sn5" secondAttribute="centerY" id="SRP-0n-z9K"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="dbm-v4-19U" id="AQy-og-vLX"/>
                                                             </connections>
@@ -749,9 +752,8 @@
                                                             <rect key="frame" x="181" y="1" width="150" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7No-vb-lgG">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7No-vb-lgG">
+                                                                    <rect key="frame" x="37" y="0.0" width="77" height="17"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="2016-12-30" id="sna-Z9-yJ0">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -759,6 +761,10 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="7No-vb-lgG" firstAttribute="centerX" secondItem="BhF-n8-bIg" secondAttribute="centerX" id="J6P-W3-VA4"/>
+                                                                <constraint firstItem="7No-vb-lgG" firstAttribute="centerY" secondItem="BhF-n8-bIg" secondAttribute="centerY" id="Q3W-q4-WqR"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="7No-vb-lgG" id="APc-tU-oYH"/>
                                                             </connections>
@@ -782,9 +788,8 @@
                                                             <rect key="frame" x="334" y="1" width="32" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="erA-Sk-6TK">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="32" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="erA-Sk-6TK">
+                                                                    <rect key="frame" x="-33" y="0.0" width="98" height="17"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="sTW-Py-BOB">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -792,6 +797,10 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="erA-Sk-6TK" firstAttribute="centerX" secondItem="H01-r5-EaH" secondAttribute="centerX" id="myG-rw-Nad"/>
+                                                                <constraint firstItem="erA-Sk-6TK" firstAttribute="centerY" secondItem="H01-r5-EaH" secondAttribute="centerY" id="ua9-GG-wMT"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="erA-Sk-6TK" id="lwF-uo-hxP"/>
                                                             </connections>

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PreViewViewController.h"
-@interface AppDelegate ()
+@interface AppDelegate ()<NSAnimationDelegate>
 @property (strong,nonatomic) NSStatusItem *item;
 @property (strong) NSPopover *popover;
 @property(nonatomic)BOOL  isShow;
@@ -42,12 +42,45 @@
   if (!flag) {
     // 主窗口显示
     [NSApp activateIgnoringOtherApps:NO];
+    
     for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
       [window makeKeyAndOrderFront:self];
+//      if ([NSStringFromClass([window class]) isEqualToString:@"NSWindow"]) {
+//        
+//        //获取当前窗口大小
+//        NSRect firstFrame = [window frame];
+//        //属性字典
+//        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+//        //设置目标对象
+//        [dict setObject:window forKey:NSViewAnimationTargetKey];
+//        //设置起始大小
+//        [dict setObject:[NSValue valueWithRect:CGRectMake(1065, 607, 0, 0)] forKey:NSViewAnimationStartFrameKey];
+//        
+//        //设置最终大小
+//        [dict setObject:[NSValue valueWithRect:firstFrame] forKey:NSViewAnimationEndFrameKey];
+//        //设置动画效果
+//        [dict setObject:NSViewAnimationFadeInEffect forKey:NSViewAnimationEffectKey];
+//        
+//        //设置动画
+//        NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:dict]];
+//        [animation setDelegate:self];
+//        //启动动画
+//        [animation startAnimation];
+//        
+//      }
+//      
     }
-    
+  }
+  else {
+    for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
+      [window orderOut:self];
+    }
   }
   return YES;
+}
+
+- (void)animationDidEnd:(NSAnimation *)animation {
+  
 }
 
 - (IBAction)itemAction:(id)sender {

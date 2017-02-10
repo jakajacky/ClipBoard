@@ -107,9 +107,6 @@
 				F2A7DED21E49784300584CF6 /* CustomCellView.h */,
 				F2A7DED31E49784300584CF6 /* CustomCellView.m */,
 				F2A7DECC1E49760B00584CF6 /* CustomCellView.xib */,
-				F21D0ED41E165D1C0072086C /* Assets.xcassets */,
-				F21D0ED61E165D1C0072086C /* Main.storyboard */,
-				F21D0ED91E165D1C0072086C /* Info.plist */,
 				F2A7DF041E4B0B8C00584CF6 /* Manager */,
 				F21D0ECE1E165D1C0072086C /* Supporting Files */,
 			);
@@ -119,6 +116,9 @@
 		F21D0ECE1E165D1C0072086C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F21D0ED61E165D1C0072086C /* Main.storyboard */,
+				F21D0ED91E165D1C0072086C /* Info.plist */,
+				F21D0ED41E165D1C0072086C /* Assets.xcassets */,
 				F2A7DEDA1E49A94B00584CF6 /* delet@2x.png */,
 				F2A7DEDC1E4AEECE00584CF6 /* Icon@2x.png */,
 				F21D0ECF1E165D1C0072086C /* main.m */,

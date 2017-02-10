@@ -12,15 +12,20 @@
             <rect key="frame" x="0.0" y="0.0" width="36" height="28"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DHX-2G-zIA">
-                    <rect key="frame" x="9" y="5" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <button hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DHX-2G-zIA">
+                    <rect key="frame" x="9" y="3" width="18" height="22"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="delet" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="nCt-1k-psq">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
             </subviews>
+            <constraints>
+                <constraint firstItem="DHX-2G-zIA" firstAttribute="leading" secondItem="fgz-6L-g56" secondAttribute="leading" constant="9" id="6LH-x3-HXC"/>
+                <constraint firstItem="DHX-2G-zIA" firstAttribute="centerX" secondItem="fgz-6L-g56" secondAttribute="centerX" id="DQX-Sm-pPh"/>
+                <constraint firstItem="DHX-2G-zIA" firstAttribute="top" secondItem="fgz-6L-g56" secondAttribute="top" constant="3" id="Qhr-OE-dhM"/>
+                <constraint firstItem="DHX-2G-zIA" firstAttribute="centerY" secondItem="fgz-6L-g56" secondAttribute="centerY" id="usT-Ol-3XG"/>
+            </constraints>
             <connections>
                 <outlet property="deleteButton" destination="DHX-2G-zIA" id="D4G-ex-MdU"/>
             </connections>
