@@ -9,10 +9,30 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Helper.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>F21D0EC71E165D1C0072086C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F221737E1E51C187002AC14F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F22173961E51C231002AC14F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F22173B11E51C25A002AC14F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
