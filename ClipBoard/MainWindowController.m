@@ -7,7 +7,7 @@
 //
 
 #import "MainWindowController.h"
-
+#import "DRStartAtLogin.h"
 @interface MainWindowController ()
 
 
@@ -18,8 +18,10 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-  [self.window setLevel:NSStatusWindowLevel];
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    [self.window setLevel:NSStatusWindowLevel];
+  
+  [DRStartAtLogin setStartAtLogin:YES];
+  
 }
 
 @end
