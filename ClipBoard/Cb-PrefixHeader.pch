@@ -1,0 +1,14 @@
+//
+//  Cb-PrefixHeader.pch
+//  ClipBoard
+//
+//  Created by xqzh on 17/2/14.
+//  Copyright © 2017年 xqzh. All rights reserved.
+//
+
+#ifndef Cb_PrefixHeader_pch
+#define Cb_PrefixHeader_pch
+
+#define UpdateNotification @"UpdateNotification"
+
+#endif /* Cb_PrefixHeader_pch */

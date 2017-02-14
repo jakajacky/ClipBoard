@@ -11,6 +11,7 @@
 #import <CoreData/CoreData.h>
 #import "CustomCellView.h"
 #import "CoreDataContext.h"
+
 @interface ViewController () <NSTableViewDelegate, NSTableViewDataSource>
 
 @property (weak) IBOutlet NSTableView *clipListView;
@@ -20,6 +21,8 @@
 @property (nonatomic, strong) NSManagedObjectContext *context;
 
 @property (nonatomic, assign) BOOL ascending;
+
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -31,6 +34,10 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  // 刷新内容
+  NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+  [center addObserver:self selector:@selector(updateData) name:UpdateNotification object:nil];
   
   _clipList = [NSMutableArray array];
 //  // coreData 搭建环境
@@ -61,8 +68,8 @@
   
   [self reloadData];
   
-  NSTimer *timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(run) userInfo:nil repeats:YES];
-  [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+  _timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(run) userInfo:nil repeats:YES];
+  [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 
 // 初始化数据
@@ -93,6 +100,8 @@
 }
 
 - (void)run {
+  
+  NSLog(@"美妙跑一次");
   // 获取剪切板
   NSPasteboard *board = [NSPasteboard generalPasteboard];
   
@@ -302,6 +311,17 @@
       newRowCell.deleteButton.hidden = YES;
     }
   }
+}
+
+// 收到通知，清空数据
+- (void)updateData {
+  // 注意：清空玩clipModel.Data文件之后，要将context也重建，才会立即清空；否则，原来数据不会立即清空，而是重启APP后才生效
+  CoreDataContext *cd = [CoreDataContext DefaultContext];
+  [cd reloadContext];
+  _context = [CoreDataContext DefaultContext].context;
+  
+  _clipList = [NSMutableArray array];
+  [self reloadData];
 }
 
 @end

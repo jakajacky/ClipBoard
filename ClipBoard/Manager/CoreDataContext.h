@@ -12,4 +12,5 @@
 @interface CoreDataContext : NSObject
 @property (nonatomic, strong) NSManagedObjectContext *context;
 + (instancetype)DefaultContext;
+- (void)reloadContext;
 @end

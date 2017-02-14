@@ -88,6 +88,7 @@
 		F22173D01E51C411002AC14F /* DRStartAtLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRStartAtLogin.m; sourceTree = "<group>"; };
 		F2275E9C1E51520800F274BB /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
 		F2275E9D1E51520800F274BB /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
+		F23FAE961E52DAD7005D5260 /* Cb-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cb-PrefixHeader.pch"; sourceTree = "<group>"; };
 		F28101091E4DB61000EC40F2 /* PreViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreViewViewController.h; sourceTree = "<group>"; };
 		F281010A1E4DB61000EC40F2 /* PreViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreViewViewController.m; sourceTree = "<group>"; };
 		F281010B1E4DB61000EC40F2 /* PreViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreViewViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +184,7 @@
 				F2A7DEDA1E49A94B00584CF6 /* delet@2x.png */,
 				F2A7DEDC1E4AEECE00584CF6 /* Icon@2x.png */,
 				F21D0ECF1E165D1C0072086C /* main.m */,
+				F23FAE961E52DAD7005D5260 /* Cb-PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -522,6 +524,8 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22X7C4G62Z;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ClipBoard/Cb-PrefixHeader.pch";
 				INFOPLIST_FILE = ClipBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.ClipBoard1;
@@ -537,6 +541,8 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22X7C4G62Z;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ClipBoard/Cb-PrefixHeader.pch";
 				INFOPLIST_FILE = ClipBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.ClipBoard1;
@@ -551,6 +557,8 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22X7C4G62Z;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.Helper;
@@ -566,6 +574,8 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 22X7C4G62Z;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.Helper;

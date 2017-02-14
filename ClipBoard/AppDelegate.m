@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PreViewViewController.h"
+
 @interface AppDelegate ()<NSAnimationDelegate>
 @property (strong,nonatomic) NSStatusItem *item;
 @property (strong) NSPopover *popover;
@@ -39,14 +40,14 @@
 
 // 关闭窗口后，点击dock中图标，重新打开窗口实现方式：
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
-  if (!flag) {
+//  if (!flag) {
     // 主窗口显示
     [NSApp activateIgnoringOtherApps:NO];
     
     for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
-      [window makeKeyAndOrderFront:self];
-//      if ([NSStringFromClass([window class]) isEqualToString:@"NSWindow"]) {
-//        
+      
+      if ([NSStringFromClass([window class]) isEqualToString:@"NSWindow"]) {
+        [window makeKeyAndOrderFront:self];
 //        //获取当前窗口大小
 //        NSRect firstFrame = [window frame];
 //        //属性字典
@@ -67,15 +68,16 @@
 //        //启动动画
 //        [animation startAnimation];
 //        
+      }
+    }
+//  }
+//  else {
+//    for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
+//      if ([NSStringFromClass([window class]) isEqualToString:@"NSWindow"]) {
+//        [window orderOut:self];
 //      }
-//      
-    }
-  }
-  else {
-    for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
-      [window orderOut:self];
-    }
-  }
+//    }
+//  }
   return YES;
 }
 
@@ -83,6 +85,7 @@
   
 }
 
+// 通过状态栏icon实现显示窗口
 - (IBAction)itemAction:(id)sender {
   // 主窗口显示
   [NSApp activateIgnoringOtherApps:NO];
@@ -99,6 +102,22 @@
 //  }
 //  self.isShow = !self.isShow;
   
+}
+
+// 清理缓存数据
+- (IBAction)clearContentData:(id)sender {
+  
+  // 构建SQLite数据库文件的路径
+  NSString *docs = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+  NSURL *url = [NSURL fileURLWithPath:[docs stringByAppendingPathComponent:@"clipData.data"]];
+  
+  /*
+   * 在未加清空本地缓存数据功能之前，暂时这样，为了不让测试数据过多
+   */
+  [[NSFileManager defaultManager] removeItemAtURL:url error:nil]; // 清空coredata数据库
+  // 刷新内容
+  NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+  [center postNotificationName:UpdateNotification object:nil];
 }
 
 -(void) setUpPopover {
