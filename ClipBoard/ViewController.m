@@ -68,8 +68,10 @@
   
   [self reloadData];
   
+  
   _timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(run) userInfo:nil repeats:YES];
   [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+  
 }
 
 // 初始化数据
@@ -96,6 +98,9 @@
     NSLog(@"content=%@", obj.content);
     [_clipList addObject: obj];
   }
+  
+  // 刷新界面列表
+  [self.clipListView reloadData];
 
 }
 
@@ -119,6 +124,7 @@
     }
   }
   if ([board stringForType:NSPasteboardTypeString] == nil) {
+    
     return;
   }
   
@@ -199,18 +205,19 @@
 }
 
 
-
+#pragma mark - 事件源
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
   return self.clipList.count;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
   NSTableCellView *cellView = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-  
+//  cellView.toolTip = @"adc";
   ClipDataModel *model = self.clipList[row];
   if( [tableColumn.identifier isEqualToString:@"clipContent"] )
   {
     cellView.textField.stringValue = model.content?model.content:@"N/A";
+    [cellView setToolTip:model.content?model.content:@"N/A"];
     return cellView;
   }
   else if( [tableColumn.identifier isEqualToString:@"operation"] ){
@@ -260,6 +267,24 @@
   return 35;
 }
 
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {
+ 
+}
+
+- (void)tableViewSelectionIsChanging:(NSNotification *)notification {
+//  // 取消旧的选中row
+//  if (self.clipListView.selectedRow >= 0) {
+//    CustomCellView *oldRowCell = (CustomCellView *)[self.clipListView viewAtColumn:2 row:self.clipListView.selectedRow makeIfNecessary:YES];
+//    oldRowCell.deleteButton.hidden = YES;
+//  }
+//  else {
+//    CustomCellView *oldRowCell = (CustomCellView *)[self.clipListView viewAtColumn:2 row:self.clipListView.selectedRow+1 makeIfNecessary:YES];
+//    oldRowCell.deleteButton.hidden = YES;
+//  }
+}
+
+
+#pragma mark - 事件
 // 删除一条信息
 - (void)deleteButtonClicked:(NSButton *)sender {
   NSLog(@"删除第%ld行", sender.tag);
