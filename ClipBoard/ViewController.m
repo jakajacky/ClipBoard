@@ -68,10 +68,8 @@
   
   [self reloadData];
   
-  
   _timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(run) userInfo:nil repeats:YES];
   [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-  
 }
 
 // 初始化数据
@@ -124,7 +122,6 @@
     }
   }
   if ([board stringForType:NSPasteboardTypeString] == nil) {
-    
     return;
   }
   
@@ -266,24 +263,6 @@
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
   return 35;
 }
-
-- (void)tableViewSelectionDidChange:(NSNotification *)notification {
- 
-}
-
-- (void)tableViewSelectionIsChanging:(NSNotification *)notification {
-//  // 取消旧的选中row
-//  if (self.clipListView.selectedRow >= 0) {
-//    CustomCellView *oldRowCell = (CustomCellView *)[self.clipListView viewAtColumn:2 row:self.clipListView.selectedRow makeIfNecessary:YES];
-//    oldRowCell.deleteButton.hidden = YES;
-//  }
-//  else {
-//    CustomCellView *oldRowCell = (CustomCellView *)[self.clipListView viewAtColumn:2 row:self.clipListView.selectedRow+1 makeIfNecessary:YES];
-//    oldRowCell.deleteButton.hidden = YES;
-//  }
-}
-
-
 #pragma mark - 事件
 // 删除一条信息
 - (void)deleteButtonClicked:(NSButton *)sender {
