@@ -248,7 +248,7 @@
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
-  return 26;
+  return 35;
 }
 
 // 删除一条信息

@@ -621,8 +621,8 @@
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dbm-v4-19U">
-                                                                    <rect key="frame" x="-2" y="0.0" width="47" height="17"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="-------" id="YAh-Bh-p8J">
+                                                                    <rect key="frame" x="-2" y="0.0" width="181" height="17"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="women nad dade djf daf dfee uer ij kie da" id="YAh-Bh-p8J">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -632,6 +632,7 @@
                                                             <constraints>
                                                                 <constraint firstItem="dbm-v4-19U" firstAttribute="leading" secondItem="Mzc-AJ-Sn5" secondAttribute="leading" id="ICP-Eg-6NJ"/>
                                                                 <constraint firstItem="dbm-v4-19U" firstAttribute="centerY" secondItem="Mzc-AJ-Sn5" secondAttribute="centerY" id="SRP-0n-z9K"/>
+                                                                <constraint firstAttribute="trailing" secondItem="dbm-v4-19U" secondAttribute="trailing" id="WaM-Q4-goJ"/>
                                                                 <constraint firstItem="dbm-v4-19U" firstAttribute="top" secondItem="Mzc-AJ-Sn5" secondAttribute="top" id="eg8-fL-u22"/>
                                                             </constraints>
                                                             <connections>
