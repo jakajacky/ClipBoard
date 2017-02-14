@@ -535,6 +535,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="openStartWithLogin:" target="364-0P-5RD" id="Tp5-jD-xdV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -544,6 +547,9 @@
                             <constraint firstItem="CFC-Bb-8L2" firstAttribute="leading" secondItem="BOR-M9-tzn" secondAttribute="leading" constant="36" id="z3v-ka-eSl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="checkBtn" destination="Soh-3b-f6R" id="MYx-4b-w95"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1101" y="-49"/>

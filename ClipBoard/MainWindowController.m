@@ -20,7 +20,11 @@
     [super windowDidLoad];
     [self.window setLevel:NSStatusWindowLevel];
   
-  [DRStartAtLogin setStartAtLogin:YES];
+    // 设置为开机启动项
+    // 从配置表中读取APP设置
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL startWhenLogin = [defaults boolForKey:@"startWhenLogin"];
+    [DRStartAtLogin setStartAtLogin:startWhenLogin];
   
 }
 
