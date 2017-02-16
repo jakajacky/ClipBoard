@@ -2,7 +2,7 @@
 //  ClipDataModel+CoreDataProperties.h
 //  ClipBoard
 //
-//  Created by xqzh on 17/1/6.
+//  Created by xqzh on 17/2/15.
 //  Copyright © 2017年 xqzh. All rights reserved.
 //
 
@@ -15,8 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<ClipDataModel *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSString *content;
-@property (nullable, nonatomic, copy) NSString *date;
+@property (nullable, nonatomic, strong) NSString *content;
+@property (nullable, nonatomic, strong) NSString *date;
+@property (nonatomic) int16_t type;
 
 @end
 

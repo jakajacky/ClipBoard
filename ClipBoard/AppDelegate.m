@@ -109,7 +109,7 @@
   
   // 构建SQLite数据库文件的路径
   NSString *docs = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-  NSURL *url = [NSURL fileURLWithPath:[docs stringByAppendingPathComponent:@"clipData.data"]];
+  NSURL *url = [NSURL fileURLWithPath:[docs stringByAppendingPathComponent:@"clipData1.data"]];
   
   /*
    * 在未加清空本地缓存数据功能之前，暂时这样，为了不让测试数据过多

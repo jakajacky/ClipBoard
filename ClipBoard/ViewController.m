@@ -10,7 +10,13 @@
 #import "ClipDataModel+CoreDataClass.h"
 #import <CoreData/CoreData.h>
 #import "CustomCellView.h"
+#import "CustomImgContentCellView.h"
 #import "CoreDataContext.h"
+
+typedef enum : NSUInteger {
+  ContentTypeString,
+  ContentTypeFile,
+} ContentType;
 
 @interface ViewController () <NSTableViewDelegate, NSTableViewDataSource>
 
@@ -30,6 +36,7 @@
 
 - (void)awakeFromNib {
   [self.clipListView registerNib:[[NSNib alloc] initWithNibNamed:@"CustomCellView" bundle:nil] forIdentifier:@"customCell"];
+  [self.clipListView registerNib:[[NSNib alloc] initWithNibNamed:@"CustomImgContentCellView" bundle:nil] forIdentifier:@"clipContent"];
 }
 
 - (void)viewDidLoad {
@@ -91,20 +98,21 @@
   if (error) {
     [NSException raise:@"查询错误" format:@"%@", [error localizedDescription]];
   }
-  // 遍历数据
-  for (ClipDataModel *obj in objs) {
-    NSLog(@"content=%@", obj.content);
-    [_clipList addObject: obj];
+  else {
+    // 遍历数据
+    for (ClipDataModel *obj in objs) {
+  //    NSLog(@"content=%@", obj.content);
+      [_clipList addObject: obj];
+    }
+    
+    // 刷新界面列表
+    [self.clipListView reloadData];
   }
-  
-  // 刷新界面列表
-  [self.clipListView reloadData];
-
 }
 
 - (void)run {
   
-  NSLog(@"美妙跑一次");
+//  NSLog(@"美妙跑一次");
   // 获取剪切板
   NSPasteboard *board = [NSPasteboard generalPasteboard];
   
@@ -114,22 +122,35 @@
   [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
   NSString *dateStr = [formatter stringFromDate:date];
   
+  // 尝试获取file类型内容
+  NSArray *urls = [[board readObjectsForClasses:@[[NSURL class]] options:@{NSPasteboardURLReadingFileURLsOnlyKey: @(YES)}] valueForKey:@"path"];
+  
   // 加入数据列表
   for (ClipDataModel *model in _clipList) {
-    NSLog(@"%@", [board stringForType:NSPasteboardTypeString]);
-    if ([model.content isEqualToString:[board stringForType:NSPasteboardTypeString]] || [board stringForType:NSPasteboardTypeString] == nil) {
-      return;
+//    NSLog(@"%@", [board stringForType:NSPasteboardTypeString]);
+    
+    if (!urls.firstObject) {
+      if ([model.content isEqualToString:[board stringForType:NSPasteboardTypeString]] || [board stringForType:NSPasteboardTypeString] == nil) {
+        return;
+      }
+      if ([board stringForType:NSPasteboardTypeString] == nil) {
+        return;
+      }
+    }
+    else {
+      if ([model.content isEqualToString:urls.firstObject]) {
+        return;
+      }
     }
   }
-  if ([board stringForType:NSPasteboardTypeString] == nil) {
-    return;
-  }
+  
   
   
   // 构建数据模型
   ClipDataModel *clipContent = [NSEntityDescription insertNewObjectForEntityForName:@"ClipDataModel" inManagedObjectContext:_context];
-  clipContent.content = [board stringForType:NSPasteboardTypeString];
+  clipContent.content = urls.firstObject? urls.firstObject : [board stringForType:NSPasteboardTypeString];
   clipContent.date    = dateStr;
+  clipContent.type    = urls.firstObject? ContentTypeFile : ContentTypeString;
   
   // 插入数组
   [_clipList insertObject:clipContent atIndex:0];
@@ -209,20 +230,49 @@
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
   NSTableCellView *cellView = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-//  cellView.toolTip = @"adc";
+  
   ClipDataModel *model = self.clipList[row];
   if( [tableColumn.identifier isEqualToString:@"clipContent"] )
   {
-    cellView.textField.stringValue = model.content?model.content:@"N/A";
-    [cellView setToolTip:model.content?model.content:@"N/A"];
-    return cellView;
+    CustomImgContentCellView *cell = (CustomImgContentCellView *)cellView;
+    
+    if (model.type == ContentTypeString) {
+      cell.contentText.stringValue = model.content?model.content:@"N/A";
+      cell.contentImg.hidden = YES;
+      cell.contentText.hidden = NO;
+      [cellView setToolTip:model.content?model.content:@"N/A"];
+      
+    }
+    else {
+      
+//      NSString *yourImageName = @"111.png"; // Replace with actual image name
+//      NSString *docDirPath    = [NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES) lastObject];
+//      NSString *pathForImage  = [@"/User" stringByAppendingPathComponent:yourImageName];
+//      NSData *data = [NSData dataWithContentsOfFile:model.content];
+      
+      NSLog(@"+++++%@+++++%@", [NSString stringWithFormat:@"%@", model.content], [[NSImage alloc] initWithContentsOfFile:model.content]);
+      NSImage *img = [[NSImage alloc] initWithContentsOfFile:model.content];
+      [img setName:nil];
+//      NSData *d = [im TIFFRepresentation];
+//      NSBitmapImageRep *imageRep = [NSBitmapImageRep imageRepWithData:d];
+//      [imageRep setSize:im.size];
+//      
+//      NSData *imgData = [imageRep representationUsingType:NSPNGFileType properties:nil];
+//      NSImage *img = [[NSImage alloc] initWithData:imgData];
+      img.cacheMode = NSImageCacheNever;
+      [img recache];
+      cell.contentImg.image = img;
+      cell.contentText.hidden = YES;
+      cell.contentImg.hidden = NO;
+      [cellView setToolTip:model.content?model.content:@"N/A"];
+    }
+    return cell;
   }
   else if( [tableColumn.identifier isEqualToString:@"operation"] ){
     cellView.textField.stringValue = model.date?model.date:@"N/A";
     return cellView;
   }
   else {
-    
     CustomCellView *cell = (CustomCellView *)cellView;
     cell.deleteButton.tag = row;
     [cell.deleteButton setTarget:self];
@@ -233,6 +283,9 @@
 
 // 点击获取更新剪切板内容
 - (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row {
+  
+  [self.clipListView reloadData];
+  
   // 获取数据
   ClipDataModel *model = self.clipList[row];
   
@@ -326,6 +379,19 @@
   
   _clipList = [NSMutableArray array];
   [self reloadData];
+}
+
+- (NSImage *)getImage:(NSString *)path {
+  NSArray *imageReps = [NSBitmapImageRep imageRepsWithContentsOfFile:path];
+  NSInteger width = 0;
+  NSInteger height = 0;
+  for (NSImageRep * imageRep in imageReps) {
+    if ([imageRep pixelsWide] > width) width = [imageRep pixelsWide];
+    if ([imageRep pixelsHigh] > height) height = [imageRep pixelsHigh];
+  }
+  NSImage *imageNSImage = [[NSImage alloc] initWithSize:NSMakeSize((CGFloat)width, (CGFloat)height)];
+  [imageNSImage addRepresentations:imageReps];
+  return imageNSImage;
 }
 
 @end

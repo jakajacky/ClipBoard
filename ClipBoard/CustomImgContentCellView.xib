@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView identifier="clipContent" id="f6m-4x-ciG" customClass="CustomImgContentCellView">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="17"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hLF-rM-Bhq">
+                    <rect key="frame" x="58" y="0.0" width="14" height="17"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="Yzn-OI-QwK"/>
+                </imageView>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ci-5q-BBu">
+                    <rect key="frame" x="1" y="0.0" width="128" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="tae-4c-R5K">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="hLF-rM-Bhq" firstAttribute="centerX" secondItem="f6m-4x-ciG" secondAttribute="centerX" id="8DB-5e-roB"/>
+                <constraint firstAttribute="bottom" secondItem="hLF-rM-Bhq" secondAttribute="bottom" id="9df-xp-peA"/>
+                <constraint firstItem="5ci-5q-BBu" firstAttribute="top" secondItem="f6m-4x-ciG" secondAttribute="top" id="D1X-RG-sPj"/>
+                <constraint firstItem="5ci-5q-BBu" firstAttribute="leading" secondItem="f6m-4x-ciG" secondAttribute="leading" constant="3" id="GAM-Ls-Hkd"/>
+                <constraint firstItem="hLF-rM-Bhq" firstAttribute="centerY" secondItem="f6m-4x-ciG" secondAttribute="centerY" id="PJx-6e-zjl"/>
+                <constraint firstAttribute="trailing" secondItem="5ci-5q-BBu" secondAttribute="trailing" constant="3" id="hWv-Ma-Elr"/>
+                <constraint firstItem="hLF-rM-Bhq" firstAttribute="top" secondItem="f6m-4x-ciG" secondAttribute="top" id="rRi-qC-NJO"/>
+            </constraints>
+            <connections>
+                <outlet property="contentImg" destination="hLF-rM-Bhq" id="rS1-k7-h46"/>
+                <outlet property="contentText" destination="5ci-5q-BBu" id="UFw-mo-Ddo"/>
+                <outlet property="imageView" destination="hLF-rM-Bhq" id="MYY-Pr-Nma"/>
+            </connections>
+            <point key="canvasLocation" x="-126" y="84.5"/>
+        </tableCellView>
+    </objects>
+    <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+    </resources>
+</document>

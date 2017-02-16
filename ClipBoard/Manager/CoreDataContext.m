@@ -20,7 +20,7 @@
     NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
     // 构建SQLite数据库文件的路径
     NSString *docs = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSURL *url = [NSURL fileURLWithPath:[docs stringByAppendingPathComponent:@"clipData.data"]];
+    NSURL *url = [NSURL fileURLWithPath:[docs stringByAppendingPathComponent:@"clipData1.data"]];
     
     // 添加持久化存储库，这里使用SQLite作为存储库
     NSError *error = nil;
@@ -44,7 +44,7 @@
   NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
   // 构建SQLite数据库文件的路径
   NSString *docs = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-  NSURL *url = [NSURL fileURLWithPath:[docs stringByAppendingPathComponent:@"clipData.data"]];
+  NSURL *url = [NSURL fileURLWithPath:[docs stringByAppendingPathComponent:@"clipData1.data"]];
   
   // 添加持久化存储库，这里使用SQLite作为存储库
   NSError *error = nil;

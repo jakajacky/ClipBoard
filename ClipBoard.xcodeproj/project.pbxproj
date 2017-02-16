@@ -23,6 +23,8 @@
 		F22173CE1E51C3E9002AC14F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F22173CD1E51C3E9002AC14F /* ServiceManagement.framework */; };
 		F22173D11E51C411002AC14F /* DRStartAtLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = F22173D01E51C411002AC14F /* DRStartAtLogin.m */; };
 		F2275E9E1E51520800F274BB /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2275E9D1E51520800F274BB /* PreferencesWindowController.m */; };
+		F27D7BA11E53F49100016F72 /* CustomImgContentCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F27D7BA01E53F49100016F72 /* CustomImgContentCellView.xib */; };
+		F27D7BA41E53F5A200016F72 /* CustomImgContentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F27D7BA31E53F5A200016F72 /* CustomImgContentCellView.m */; };
 		F281010C1E4DB61000EC40F2 /* PreViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F281010A1E4DB61000EC40F2 /* PreViewViewController.m */; };
 		F281010D1E4DB61000EC40F2 /* PreViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F281010B1E4DB61000EC40F2 /* PreViewViewController.xib */; };
 		F2815BB01E51A5AD00A64316 /* SystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2815BAF1E51A5AD00A64316 /* SystemViewController.m */; };
@@ -89,6 +91,9 @@
 		F2275E9C1E51520800F274BB /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
 		F2275E9D1E51520800F274BB /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
 		F23FAE961E52DAD7005D5260 /* Cb-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cb-PrefixHeader.pch"; sourceTree = "<group>"; };
+		F27D7BA01E53F49100016F72 /* CustomImgContentCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomImgContentCellView.xib; sourceTree = "<group>"; };
+		F27D7BA21E53F5A200016F72 /* CustomImgContentCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomImgContentCellView.h; sourceTree = "<group>"; };
+		F27D7BA31E53F5A200016F72 /* CustomImgContentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImgContentCellView.m; sourceTree = "<group>"; };
 		F28101091E4DB61000EC40F2 /* PreViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreViewViewController.h; sourceTree = "<group>"; };
 		F281010A1E4DB61000EC40F2 /* PreViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreViewViewController.m; sourceTree = "<group>"; };
 		F281010B1E4DB61000EC40F2 /* PreViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreViewViewController.xib; sourceTree = "<group>"; };
@@ -167,6 +172,9 @@
 				F2A7DED21E49784300584CF6 /* CustomCellView.h */,
 				F2A7DED31E49784300584CF6 /* CustomCellView.m */,
 				F2A7DECC1E49760B00584CF6 /* CustomCellView.xib */,
+				F27D7BA21E53F5A200016F72 /* CustomImgContentCellView.h */,
+				F27D7BA31E53F5A200016F72 /* CustomImgContentCellView.m */,
+				F27D7BA01E53F49100016F72 /* CustomImgContentCellView.xib */,
 				F2275E9B1E5151A200F274BB /* Preferences */,
 				F28101081E4DB5ED00EC40F2 /* LaterCR */,
 				F2A7DF041E4B0B8C00584CF6 /* Manager */,
@@ -348,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2A7DEDB1E49A94B00584CF6 /* delet@2x.png in Resources */,
+				F27D7BA11E53F49100016F72 /* CustomImgContentCellView.xib in Resources */,
 				F21D0ED51E165D1C0072086C /* Assets.xcassets in Resources */,
 				F21D0ED81E165D1C0072086C /* Main.storyboard in Resources */,
 				F281010D1E4DB61000EC40F2 /* PreViewViewController.xib in Resources */,
@@ -376,6 +385,7 @@
 				F2815BB01E51A5AD00A64316 /* SystemViewController.m in Sources */,
 				F2A7DED41E49784300584CF6 /* CustomCellView.m in Sources */,
 				F2A7DF071E4B0BD300584CF6 /* CoreDataContext.m in Sources */,
+				F27D7BA41E53F5A200016F72 /* CustomImgContentCellView.m in Sources */,
 				F21D0EE11E1B7D5E0072086C /* MainWindowController.m in Sources */,
 				F22173CC1E51C3C1002AC14F /* StartAtLoginController.m in Sources */,
 				F2275E9E1E51520800F274BB /* PreferencesWindowController.m in Sources */,
@@ -533,7 +543,7 @@
 				INFOPLIST_FILE = ClipBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.ClipBoard1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.ClipBoard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -555,7 +565,7 @@
 				INFOPLIST_FILE = ClipBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.ClipBoard1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zxq.ClipBoard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
